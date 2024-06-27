@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>坐垫高度与Stack/Reach计算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .input-container label {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .input-container input[type="number"] {
+            flex: 2;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .input-container span {
+            flex: 1;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .image-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+   <h1>公路自行车选车计算器</h1>
+
+    <div class="section">
+        <h2>前言</h2>
+        <p>本篇内容是参考“摸发虱痒”大佬翻译的内容，来选择自行车而整理成的网页内容。以便于自己在家进行根据数值，推算出要购买的自行车的尺寸。</p>
+    </div>
+
+    <div class="section">
+        <h2>测量并计算坐垫位置</h2>
+
+        <div class="image-container">
+            <!-- 预留图片位置 -->
+            <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627013910795.png" alt="集中参数的计算方式">
+        </div>
+
+        <p>上图是关于四个身体参数的详细图解。其中，正确测量是后面进行工作的基础。</p>
+
+        <ul>
+            <li>身高：赤脚情况下，正常测量即可</li>
+            <li>跨高：最重要的数据，赤脚站在墙边，将一本书后短边靠在墙面上，用力向上顶住会阴部，测量书脊的高度。（一定要用力）</li>
+            <li>臂长：用手掌握住一支笔并伸直手臂，测量笔至肩膀顶部的距离。</li>
+            <li>胸高：赤脚站在墙边，测量地板到锁骨中心凹陷处的距离。</li>
+        </ul>
+
+
+    <div class="section">
+        <h2>测量并输入身体参数</h2>
+        <div class="input-container">
+            <label for="height">身高（a）：</label>
+            <input type="number" id="height" name="height" required>
+            <span>mm</span>
+        </div>
+
+        <div class="input-container">
+            <label for="inseam">跨高（b）：</label>
+            <input type="number" id="inseam" name="inseam" required>
+            <span>mm</span>
+        </div>
+
+        <div class="input-container">
+            <label for="armLength">臂长（c）：</label>
+            <input type="number" id="armLength" name="armLength" required>
+            <span>mm</span>
+        </div>
+
+        <div class="input-container">
+            <label for="chestHeight">胸高（d）：</label>
+            <input type="number" id="chestHeight" name="chestHeight" required>
+            <span>mm</span>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h2>计算手相对于五通的位置</h2>
+
+        <div class="image-container">
+            <!-- 预留图片位置 -->
+            <!-- <img src="your-image-url.jpg" alt="示例图片"> -->
+            <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627021946551.png" alt="姿势参数的表现">
+        </div>
+
+        <p>坐垫位置确定之后，就要确定手的位置，也就是手和手边接触的位置。在这里要根据姿势参数和落差参数计算出手的位置</p>
+
+        <div class="image-container">
+            <!-- 预留图片位置 -->
+            <!-- <img src="your-image-url.jpg" alt="示例图片"> -->
+            <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627015750561.png" alt="姿势参数的表现">
+        </div>
+
+
+
+        <ul>
+            <li>稳定：0.52</li>
+            <li>中立：0.535</li>
+            <li>进取：0.545</li>
+        </ul>
+
+        <div class="image-container">
+            <!-- 预留图片位置 -->
+            <!-- <img src="your-image-url.jpg" alt="示例图片"> -->
+            <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627021014425.png" alt="建议落差参数">
+        </div>
+
+        <p>上图是关于姿势参数和落差参数的建议值</p>
+
+        <div class="input-container">
+            <label for="poseParam">姿势参数（f）：</label>
+            <input type="number" id="poseParam" name="poseParam" required>
+            <span>mm</span>
+        </div>
+
+        <div class="input-container">
+            <label for="dropParam">落差参数（h）：</label>
+            <input type="number" id="dropParam" name="dropParam" required>
+            <span>mm</span>
+        </div>
+
+        <button type="button" onclick="calculateSeatAndResults()">计算坐垫高度和结果</button>
+        
+        <div id="seatHeightResult" class="result"></div>
+        <div id="calculationResults" class="result"></div>
+    </div>
+
+    <div class="section">
+        <h2>得到对应的Stack和Reach</h2>
+        <p>根据握持点来从各个厂商的车架里选择合适的产品，为此，你需要先减去车把和把立的Stack和Reach。</p>
+        <p>当以下条件时：</p>
+        <ul>
+            <li>普通弯把</li>
+            <li>把立：长度为110mm，角度为-7°</li>
+            <li>垫圈高度为30mm</li>
+        </ul>
+        <p>所占据的X轴长度为204mm，Y轴高度为67mm。</p>
+        <div class="image-container">
+            <!-- 预留图片位置 -->
+            <!-- <img src="your-image-url.jpg" alt="示例图片"> -->
+        </div>
+        <div class="input-container">
+            <label for="xInput">X轴长度（默认204mm）：</label>
+            <input type="number" id="xInput" name="xInput" value="204">
+            <span>mm</span>
+        </div>
+
+        <div class="input-container">
+            <label for="yInput">Y轴高度（默认67mm）：</label>
+            <input type="number" id="yInput" name="yInput" value="67">
+            <span>mm</span>
+        </div>
+
+        <button type="button" onclick="calculateStackReach()">计算Stack和Reach</button>
+        
+        <div id="stackReachResults" class="result"></div>
+    </div>
+
+    <div class="section">
+        <h2>注意</h2>
+        <p>每个人的身体状况都不同，以上数据仅供参考。其中Stack的结果相对更加准确。</p>
+    </div>  
+
+    <script>
+        function calculateSeatAndResults() {
+            calculateSeatHeight();
+            calculateResults();
+        }
+
+        function calculateSeatHeight() {
+            var b = parseFloat(document.getElementById('inseam').value);
+            var e = b * 0.883;
+            var seatHeightResult = document.getElementById('seatHeightResult');
+            seatHeightResult.innerHTML = `<p>参考坐垫高度 e = ${e.toFixed(2)} mm</p>`;
+        }
+
+        function calculateResults() {
+            var b = parseFloat(document.getElementById('inseam').value);
+            var c = parseFloat(document.getElementById('armLength').value);
+            var d = parseFloat(document.getElementById('chestHeight').value);
+            var f = parseFloat(document.getElementById('poseParam').value);
+            var h = parseFloat(document.getElementById('dropParam').value);
+
+            var e = b * 0.883;
+            var stackPlus = (e * 0.96) - h;
+            var reachPlus = (d - b + c) * f - (e * 0.29) + 100;
+
+            var calculationResults = document.getElementById('calculationResults');
+            calculationResults.innerHTML = `
+                <p>Stack Plus: ${stackPlus.toFixed(2)} mm</p>
+                <p>Reach Plus: ${reachPlus.toFixed(2)} mm</p>
+            `;
+        }
+
+        function calculateStackReach() {
+            var stackPlus = parseFloat(document.getElementById('calculationResults').getElementsByTagName('p')[0].innerText.split(": ")[1]);
+            var reachPlus = parseFloat(document.getElementById('calculationResults').getElementsByTagName('p')[1].innerText.split(": ")[1]);
+            var x = parseFloat(document.getElementById('xInput').value) || 204; // 默认值204
+            var y = parseFloat(document.getElementById('yInput').value) || 67;   // 默认值67
+
+            var reach = reachPlus - x;
+            var stack = stackPlus - y;
+
+            var stackReachResults = document.getElementById('stackReachResults');
+            stackReachResults.innerHTML = `
+                <p>Reach: ${reach.toFixed(2)} mm</p>
+                <p>Stack: ${stack.toFixed(2)} mm</p>
+            `;
+        }
+    </script>
+</body>
+</html>
