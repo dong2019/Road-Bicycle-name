@@ -54,7 +54,7 @@
         }
         .image-container {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: auto;
         }
         .image-container img {
             max-width: 100%;
@@ -73,7 +73,7 @@
 
     <div class="section">
         <h2>前言</h2>
-        <p>本篇内容是参考“摸发虱痒”大佬翻译的内容，来选择自行车而整理成的网页内容。以便于自己在家进行根据数值，推算出要购买的自行车的尺寸。</p>
+        <p>本篇内容是参考“<a href="https://weibo.com/u/1656034801">摸发虱痒</a>”大佬翻译的内容，来选择自行车而整理成的网页内容。以便于自己在家进行根据数值，推算出要购买的自行车的尺寸。</p>
     </div>
 
     <div class="section">
@@ -95,52 +95,47 @@
 
 
     <div class="section">
-        <h2>测量并输入身体参数</h2>
+<!--          <h2>测量并输入身体参数</h2> -->
         <div class="input-container">
-            <label for="height">身高（a）：</label>
+            <label for="height">身高(mm)：</label>
             <input type="number" id="height" name="height" required>
-            <span>mm</span>
         </div>
 
         <div class="input-container">
-            <label for="inseam">跨高（b）：</label>
+            <label for="inseam">跨高(mm)：</label>
             <input type="number" id="inseam" name="inseam" required>
-            <span>mm</span>
         </div>
 
         <div class="input-container">
-            <label for="armLength">臂长（c）：</label>
+            <label for="armLength">臂长(mm)：</label>
             <input type="number" id="armLength" name="armLength" required>
-            <span>mm</span>
         </div>
 
         <div class="input-container">
-            <label for="chestHeight">胸高（d）：</label>
+            <label for="chestHeight">胸高(mm)：</label>
             <input type="number" id="chestHeight" name="chestHeight" required>
-            <span>mm</span>
         </div>
 
     </div>
 
     <div class="section">
-        <h2>计算手相对于五通的位置</h2>
-
+        <h2>计算坐垫高度和手的位置</h2>
+<!--
         <div class="image-container">
-            <!-- 预留图片位置 -->
-            <!-- <img src="your-image-url.jpg" alt="示例图片"> -->
+        车架图片
             <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627021946551.png" alt="姿势参数的表现">
         </div>
-
+-->
         <p>坐垫位置确定之后，就要确定手的位置，也就是手和手边接触的位置。在这里要根据姿势参数和落差参数计算出手的位置</p>
 
         <div class="image-container">
-            <!-- 预留图片位置 -->
+            <!-- 第二部分的图片内容 -->
             <!-- <img src="your-image-url.jpg" alt="示例图片"> -->
-            <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627015750561.png" alt="姿势参数的表现">
+            <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627095752679.png" alt="姿势参数的表现">
         </div>
 
 
-
+<!--
         <ul>
             <li>稳定：0.52</li>
             <li>中立：0.535</li>
@@ -148,26 +143,23 @@
         </ul>
 
         <div class="image-container">
-            <!-- 预留图片位置 -->
-            <!-- <img src="your-image-url.jpg" alt="示例图片"> -->
+
             <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627021014425.png" alt="建议落差参数">
         </div>
-
-        <p>上图是关于姿势参数和落差参数的建议值</p>
+-->
+        <p>这一步要计算出坐垫的高度以及手相对于五通的位置。其中这里要根据上图，选择姿势参数和落差参数来计算Stack Plus和Reach Plus</p>
 
         <div class="input-container">
-            <label for="poseParam">姿势参数（f）：</label>
+            <label for="poseParam">姿势参数(mm)：</label>
             <input type="number" id="poseParam" name="poseParam" required>
-            <span>mm</span>
         </div>
 
         <div class="input-container">
-            <label for="dropParam">落差参数（h）：</label>
+            <label for="dropParam">落差参数（mm）：</label>
             <input type="number" id="dropParam" name="dropParam" required>
-            <span>mm</span>
         </div>
 
-        <button type="button" onclick="calculateSeatAndResults()">计算坐垫高度和结果</button>
+        <button type="button" onclick="calculateSeatAndResults()">坐垫高度和手的位置</button>
         
         <div id="seatHeightResult" class="result"></div>
         <div id="calculationResults" class="result"></div>
@@ -190,23 +182,50 @@
         <div class="input-container">
             <label for="xInput">X轴长度（默认204mm）：</label>
             <input type="number" id="xInput" name="xInput" value="204">
-            <span>mm</span>
         </div>
 
         <div class="input-container">
             <label for="yInput">Y轴高度（默认67mm）：</label>
             <input type="number" id="yInput" name="yInput" value="67">
-            <span>mm</span>
         </div>
 
-        <button type="button" onclick="calculateStackReach()">计算Stack和Reach</button>
+        <button type="button" onclick="calculateStackReach()">车架的Stack和Reach</button>
         
         <div id="stackReachResults" class="result"></div>
     </div>
 
     <div class="section">
-        <h2>注意</h2>
-        <p>每个人的身体状况都不同，以上数据仅供参考。其中Stack的结果相对更加准确。</p>
+        <h2>注意事项和参考内容</h2>
+
+        
+        <p>每个人的身体状况都不同，以上数据仅供参考。其中Stack的结果相对更加准确。因为在车架的变化上，Stack相对于Reach变化更大，也更难调整。</p>
+        <p>拿到Reach和Stack之后，就要去对应厂商的官网查找</p> 
+
+        <ul>
+            <li><a href="https://www.specialized.com.cn/">闪电</a></li>
+            <li><a href="https://www.trekbikes.com/">崔克</a></li>
+            <li><a href="https://www.merida-bikes.com/en-gb/">美利达</a></li>
+            <li><a href="https://www.giant.com.cn/">捷安特</a></li>
+        </ul>
+
+        <p>这里批评美利达在大陆的网站差劲，都没有几何尺寸，当我地址选择英国的时候，就有了车架尺寸</p>
+
+        <div class="image-container">
+            <!-- 第二部分的图片内容 -->
+            <!-- <img src="your-image-url.jpg" alt="示例图片"> -->
+            <img src="https://ddw2019.oss-cn-shanghai.aliyuncs.com/2023-typora/image-20240627103434842.png" alt="闪电的自行车选择">
+        </div>
+
+        <p>上图是以闪电为例的挑选车架的过程。选择具体的车型，找到几何，然后根据几何挑选车架。最后到车店去试车（一定要试车，不然谁知道啥样呀？）</p> 
+
+
+        <p>如果图片有误用，请联系本人（ddw2019@foxmail.com)删除。具体的参考内容</p>
+
+        <ul>
+            <li><a href="https://tieba.baidu.com/p/8830196547">万字迭代，2024的公路车完整入门必读_公路车吧_百度贴吧</a></li>
+            <li><a href="https://tieba.baidu.com/p/7471557150?pn=1">【图片】一个车友买了过小的车架，这是他的身体发生的变化【公路车吧】_百度贴吧</a></li>
+            <li><a href="https://www.scribd.com/document/638487573/Untitled">翻译：摸发虱痒 嵌字：摸发虱痒 评论：摸发虱痒 本文章仅用于个人学习及研究，请勿用作商业用途 原文及图片版权归TOUR-MAGAZIN杂志所有 | PDF</a></li>
+        </ul>
     </div>  
 
     <script>
